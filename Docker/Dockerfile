@@ -6,7 +6,7 @@ FROM golang:1.20.4-buster
 RUN apt-get update && apt-get install -y wget git net-tools tcpdump iperf
 
 
-RUN echo 5
+RUN echo 6
 # Clone the go-gtp repository
 RUN git clone https://github.com/AbdallahRustom/OKS_GO_GTP.git /go-gtp
 
@@ -19,4 +19,6 @@ RUN go build -o ./examples/gw-tester/enb/enb ./examples/gw-tester/enb
 
 WORKDIR /go-gtp
 COPY init.sh /go-gtp/init.sh
+COPY enb.yml /mnt/enb.yml
+COPY mme.yml /mnt/mme.yml
 CMD /go-gtp/init.sh
