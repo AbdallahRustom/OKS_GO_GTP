@@ -6,9 +6,9 @@ FROM golang:1.20.4-buster
 RUN apt-get update && apt-get install -y wget git net-tools tcpdump iperf
 
 
-RUN echo 4
+RUN echo 5
 # Clone the go-gtp repository
-RUN git clone https://github.com/AbdallahRustom/go-gtp.git /go-gtp
+RUN git clone https://github.com/AbdallahRustom/OKS_GO_GTP.git /go-gtp
 
 WORKDIR /go-gtp
 

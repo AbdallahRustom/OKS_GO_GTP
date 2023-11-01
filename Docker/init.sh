@@ -29,18 +29,23 @@
 cp /mnt/enb.yml examples/gw-tester/enb/enb.yml
 cp /mnt/mme.yml examples/gw-tester/mme/mme.yml
 
+
+ETH0_IP=$(ip addr show dev eth0 | grep -oP 'inet \K[\d.]+')
+
 sed -i 's|MCC|'$MCC'|g' examples/gw-tester/enb/enb.yml
 sed -i 's|MNC|'$MNC'|g' examples/gw-tester/enb/enb.yml
-sed -i 's|GTP_DOCKER_IP|'$GTP_DOCKER_IP'|g' examples/gw-tester/enb/enb.yml
+sed -i 's|ETH0_IP|'$ETH0_IP'|g' examples/gw-tester/enb/enb.yml
 sed -i 's|UE1_IMSI|'$UE1_IMSI'|g' examples/gw-tester/enb/enb.yml
 sed -i 's|UE1_IMEISV|'$UE1_IMEISV'|g' examples/gw-tester/enb/enb.yml
 sed -i 's|UE_IPV4_INTERNET|'$UE_IPV4_INTERNET'|g' examples/gw-tester/enb/enb.yml
+sed -i 's|HTTP_SERVER_IP|'$HTTP_SERVER_IP'|g' examples/gw-tester/enb/enb.yml
 
 sed -i 's|MCC|'$MCC'|g' /go-gtp/examples/gw-tester/mme/mme.yml
 sed -i 's|MNC|'$MNC'|g' /go-gtp/examples/gw-tester/mme/mme.yml
 sed -i 's|SGWC_IP|'$SGWC_IP'|g' /go-gtp/examples/gw-tester/mme/mme.yml
 sed -i 's|SMF_IP|'$SMF_IP'|g' /go-gtp/examples/gw-tester/mme/mme.yml
-sed -i 's|GTP_DOCKER_IP|'$GTP_DOCKER_IP'|g' /go-gtp/examples/gw-tester/mme/mme.yml
+sed -i 's|ETH0_IP|'$ETH0_IP'|g' /go-gtp/examples/gw-tester/mme/mme.yml
+sed -i 's|APN|'$APN'|g' /go-gtp/examples/gw-tester/mme/mme.yml
 
 cd /go-gtp/examples/gw-tester/mme/
 ./mme &  

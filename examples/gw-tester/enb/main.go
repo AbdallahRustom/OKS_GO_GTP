@@ -40,7 +40,7 @@ func main() {
 	srcip2 := strconv.Itoa(SRCIP2)
 	TrafficType := "http_get"
 	EUuIFName := "lo"
-	HTTPURL := "http://172.22.0.254/"
+	HTTPURL := "http://10.43.131.227/"
 	for i := 0; i < 100; i++ {
 		
 		imsi := imsiGenerator(i, IMSI)

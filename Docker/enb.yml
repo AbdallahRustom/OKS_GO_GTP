@@ -5,19 +5,19 @@ tai: 0x0001
 eci: 0x00000001
 local_addresses:
   s1c_ip: "127.0.1.11"
-  s1u_ip: "GTP_DOCKER_IP"
+  s1u_ip: "ETH0_IP"
 mme_addr: "127.0.1.12:36412"
 use_kernel_gtp: true
-prom_addr: "GTP_DOCKER_IP:9092"
+prom_addr: "ETH0_IP:9092"
 subscribers:
   - imsi: "UE1_IMSI"
     msisdn: "814000000001"
     imeisv: "UE1_IMEISV"
     src_ip: "UE_IPV4_INTERNET"
     i_tei: 1
-    type: "http_get"
+    type: "test"
     euu_if_name: "lo"
-    http_url: "http://172.22.0.254/"
+    http_url: "http://HTTP_SERVER_IP/"
     reattach_on_reload: false
   # - imsi: "001010000000002"
   #   msisdn: "814000000002"
