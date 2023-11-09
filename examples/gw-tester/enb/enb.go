@@ -346,6 +346,7 @@ func (e *enb) setupUPlane(ctx context.Context, sub *Subscriber) error {
 		}
 		if err := e.addRuleLocal(sub); err != nil {
 			return err
+		}
 	
 	default:
 		return fmt.Errorf("unknown/unimplemented type: %s specified for 'type' in subscriber", sub.TrafficType)
