@@ -340,6 +340,13 @@ func (e *enb) setupUPlane(ctx context.Context, sub *Subscriber) error {
 		if err := e.addRuleExternal(sub); err != nil {
 			return err
 		}
+	case "ping":
+		if err := e.addIP(sub); err != nil {
+			return err
+		}
+		if err := e.addRuleLocal(sub); err != nil {
+			return err
+	
 	default:
 		return fmt.Errorf("unknown/unimplemented type: %s specified for 'type' in subscriber", sub.TrafficType)
 	}
