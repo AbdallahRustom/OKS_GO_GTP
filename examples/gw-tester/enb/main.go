@@ -38,7 +38,7 @@ func main() {
 	SRCIP := 10
 	SRCIP2 := 100
 	srcip2 := strconv.Itoa(SRCIP2)
-	TrafficType := "http_get"
+	TrafficType := "ping"
 	EUuIFName := "lo"
 	HTTPURL := "http://10.43.131.227/"
 	for i := 0; i < 100; i++ {

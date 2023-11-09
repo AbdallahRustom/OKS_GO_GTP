@@ -15,7 +15,7 @@ subscribers:
     imeisv: "UE1_IMEISV"
     src_ip: "UE_IPV4_INTERNET"
     i_tei: 1
-    type: "test"
+    type: "ping"
     euu_if_name: "lo"
     http_url: "http://HTTP_SERVER_IP/"
     reattach_on_reload: false
