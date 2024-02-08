@@ -32,7 +32,7 @@ func main() {
 		log.Printf("failed to initialize eNB: %s", err)
 	}
 
-	IMSI := "002020000000010"
+	IMSI := "00101000000001"
 	MSISDN := "0000000010"
 	IMEISV := "1234500000010"
 	SRCIP := 10
@@ -47,9 +47,9 @@ func main() {
 		msisdn := imsiGenerator(i, MSISDN)
 		imeisv := imsiGenerator(i, IMEISV)
 		srcip := strconv.Itoa(SRCIP)
-		if srcip == "255" {
-			SRCIP = 1	
-			srcip = "1"
+		if srcip == "254" {
+			SRCIP = 2	
+			srcip = "2"
 			SRCIP2++
 			srcip2 = strconv.Itoa(SRCIP2)
 		}
