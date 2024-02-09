@@ -15,6 +15,7 @@ import (
 	"strconv"
 	"syscall"
 	"fmt"
+	"time"
 )
 
 func main() {
@@ -42,7 +43,7 @@ func main() {
 	EUuIFName := "lo"
 	HTTPURL := "http://10.43.131.227/"
 	for i := 0; i < 5001; i++ {
-		
+		time.Sleep(1 * time.Second)
 		imsi := imsiGenerator(i, IMSI)
 		msisdn := imsiGenerator(i, MSISDN)
 		imeisv := imsiGenerator(i, IMEISV)
