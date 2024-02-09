@@ -32,7 +32,7 @@ func main() {
 		log.Printf("failed to initialize eNB: %s", err)
 	}
 
-	IMSI := "00101000000001"
+	IMSI := "001010000000001"
 	MSISDN := "0000000010"
 	IMEISV := "1234500000010"
 	SRCIP := 10
