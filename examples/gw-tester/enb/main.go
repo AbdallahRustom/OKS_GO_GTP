@@ -58,7 +58,7 @@ func main() {
 		enb.candidateSubs= append(enb.candidateSubs, sub)
 		SRCIP++
 		time.Sleep(1 * time.Second)
-	}
+	}(i)
 	spew.Dump(enb.candidateSubs)
 	
 
