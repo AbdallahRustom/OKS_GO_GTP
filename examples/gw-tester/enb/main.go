@@ -57,6 +57,7 @@ func main() {
 		sub = &Subscriber{IMSI:imsi, MSISDN:msisdn, IMEISV:imeisv, SrcIP: "192.168."+srcip2+"."+srcip, TrafficType:TrafficType, EUuIFName:EUuIFName, HTTPURL:HTTPURL}
 		enb.candidateSubs= append(enb.candidateSubs, sub)
 		SRCIP++
+		time.Sleep(1 * time.Second)
 	}
 	spew.Dump(enb.candidateSubs)
 
