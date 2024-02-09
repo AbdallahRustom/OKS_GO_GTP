@@ -1,8 +1,9 @@
 version: '3'
 services:
   gogtpdocker:
-    image: go-gtp-docker
+    image: go-gtp-stest5000ued1
     container_name: go-gtp-docker
+    entrypoint: sleep 100000
     privileged: true
     env_file:
       - .env
