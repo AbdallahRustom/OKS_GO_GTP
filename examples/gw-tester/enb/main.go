@@ -41,7 +41,7 @@ func main() {
 	TrafficType := "ping"
 	EUuIFName := "lo"
 	HTTPURL := "http://10.43.131.227/"
-	for i := 0; i < 1000; i++ {
+	for i := 0; i < 5001; i++ {
 		
 		imsi := imsiGenerator(i, IMSI)
 		msisdn := imsiGenerator(i, MSISDN)
