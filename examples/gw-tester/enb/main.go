@@ -57,7 +57,7 @@ func main() {
 		enb.candidateSubs= append(enb.candidateSubs, sub)
 		SRCIP++
 	}
-	spew.Dump(enb.candidateSubs)
+	// spew.Dump(enb.candidateSubs)
 	
 
 
