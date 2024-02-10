@@ -139,7 +139,7 @@ func (e *enb) run(ctx context.Context) error {
 		select {
 		case <-ctx.Done():
 			return nil
-		case <-time.After(100 * time.Millisecond):
+		case <-time.After(50 * time.Millisecond):
 			// not to load too much in case of many subscribers
 		}
 
