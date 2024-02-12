@@ -162,7 +162,7 @@ func (e *enb) run(ctx context.Context) error {
 				}
 			}()
 			// wait 10ms after dispatching
-			time.Sleep(2 * time.Second)
+			time.Sleep(10 * time.Second)
 		}
 	}
 }
