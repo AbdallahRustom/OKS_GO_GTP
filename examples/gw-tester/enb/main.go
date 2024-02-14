@@ -35,8 +35,8 @@ func main() {
 	IMSI := "001010000000001"
 	MSISDN := "0000000010"
 	IMEISV := "1234500000010"
-	SRCIP := 10
-	SRCIP2 := 100
+	SRCIP := 3
+	SRCIP2 := 0
 	srcip2 := strconv.Itoa(SRCIP2)
 	TrafficType := "ping"
 	EUuIFName := "lo"
