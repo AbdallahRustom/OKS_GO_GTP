@@ -139,7 +139,7 @@ func (e *enb) run(ctx context.Context) error {
 		select {
 		case <-ctx.Done():
 			return nil
-		case <-time.After(90 * time.Millisecond):
+		case <-time.After(100 * time.Millisecond):
 			// not to load too much in case of many subscribers
 		}
 
@@ -162,7 +162,7 @@ func (e *enb) run(ctx context.Context) error {
 				}
 			}()
 			// wait 10ms after dispatching
-			time.Sleep(10 * time.Second)
+			time.Sleep(20 * time.Second)
 		}
 	}
 }
