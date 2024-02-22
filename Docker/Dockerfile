@@ -11,7 +11,7 @@ RUN echo 6
 RUN git clone https://github.com/AbdallahRustom/OKS_GO_GTP.git /go-gtp
 
 WORKDIR /go-gtp
-RUN git checkout oks_stress_test
+RUN git checkout 1ue_seperate_enb_mme
 RUN go mod tidy
 RUN go build -o ./examples/gw-tester/mme/mme ./examples/gw-tester/mme
 RUN go build -o ./examples/gw-tester/enb/enb ./examples/gw-tester/enb
