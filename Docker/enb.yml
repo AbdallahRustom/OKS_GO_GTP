@@ -4,9 +4,9 @@ rat_type: 6 # E-UTRAN
 tai: 0x0001
 eci: 0x00000001
 local_addresses:
-  s1c_ip: "127.0.1.11"
+  s1c_ip: "ETH0_IP"
   s1u_ip: "ETH0_IP"
-mme_addr: "127.0.1.12:36412"
+mme_addr: "MMEADDR:36412"
 use_kernel_gtp: true
 prom_addr: "ETH0_IP:9092"
 subscribers:

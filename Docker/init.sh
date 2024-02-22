@@ -39,6 +39,8 @@ sed -i 's|UE1_IMSI|'$UE1_IMSI'|g' examples/gw-tester/enb/enb.yml
 sed -i 's|UE1_IMEISV|'$UE1_IMEISV'|g' examples/gw-tester/enb/enb.yml
 sed -i 's|UE_IPV4_INTERNET|'$UE_IPV4_INTERNET'|g' examples/gw-tester/enb/enb.yml
 sed -i 's|HTTP_SERVER_IP|'$HTTP_SERVER_IP'|g' examples/gw-tester/enb/enb.yml
+sed -i 's|MMEADDR|'$MMEADDR'|g' examples/gw-tester/enb/enb.yml
+
 
 sed -i 's|MCC|'$MCC'|g' /go-gtp/examples/gw-tester/mme/mme.yml
 sed -i 's|MNC|'$MNC'|g' /go-gtp/examples/gw-tester/mme/mme.yml
@@ -47,11 +49,19 @@ sed -i 's|SMF_IP|'$SMF_IP'|g' /go-gtp/examples/gw-tester/mme/mme.yml
 sed -i 's|ETH0_IP|'$ETH0_IP'|g' /go-gtp/examples/gw-tester/mme/mme.yml
 sed -i 's|APN|'$APN'|g' /go-gtp/examples/gw-tester/mme/mme.yml
 
-cd /go-gtp/examples/gw-tester/mme/
-./mme &  
 
-cd /go-gtp/examples/gw-tester/enb/
-./enb
+if [[ ${COMPONENT} == MME ]];
+then
+    cd /go-gtp/examples/gw-tester/mme/
+    ./mme
+fi
+
+if [[ ${COMPONENT} == ENB ]];
+then
+    cd /go-gtp/examples/gw-tester/enb/
+    ./enb
+fi
+
 
 # Sync docker time
 #ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
