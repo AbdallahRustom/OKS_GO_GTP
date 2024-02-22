@@ -32,31 +32,31 @@ func main() {
 		log.Printf("failed to initialize eNB: %s", err)
 	}
 
-	IMSI := "001010000000001"
-	MSISDN := "0000000010"
-	IMEISV := "1234500000010"
-	SRCIP := 3
-	SRCIP2 := 0
-	srcip2 := strconv.Itoa(SRCIP2)
-	TrafficType := "ping"
-	EUuIFName := "lo"
-	HTTPURL := "http://10.43.131.227/"
-	for i := 0; i < 5001; i++ {
-		imsi := imsiGenerator(i, IMSI)
-		msisdn := imsiGenerator(i, MSISDN)
-		imeisv := imsiGenerator(i, IMEISV)
-		srcip := strconv.Itoa(SRCIP)
-		if srcip == "254" {
-			SRCIP = 2	
-			srcip = "2"
-			SRCIP2++
-			srcip2 = strconv.Itoa(SRCIP2)
-		}
-		var sub *Subscriber
-		sub = &Subscriber{IMSI:imsi, MSISDN:msisdn, IMEISV:imeisv, SrcIP: "192.168."+srcip2+"."+srcip, TrafficType:TrafficType, EUuIFName:EUuIFName, HTTPURL:HTTPURL}
-		enb.candidateSubs= append(enb.candidateSubs, sub)
-		SRCIP++
-	}
+	// IMSI := "001010000000001"
+	// MSISDN := "0000000010"
+	// IMEISV := "1234500000010"
+	// SRCIP := 3
+	// SRCIP2 := 0
+	// srcip2 := strconv.Itoa(SRCIP2)
+	// TrafficType := "ping"
+	// EUuIFName := "lo"
+	// HTTPURL := "http://10.43.131.227/"
+	// for i := 0; i < 5001; i++ {
+	// 	imsi := imsiGenerator(i, IMSI)
+	// 	msisdn := imsiGenerator(i, MSISDN)
+	// 	imeisv := imsiGenerator(i, IMEISV)
+	// 	srcip := strconv.Itoa(SRCIP)
+	// 	if srcip == "254" {
+	// 		SRCIP = 2	
+	// 		srcip = "2"
+	// 		SRCIP2++
+	// 		srcip2 = strconv.Itoa(SRCIP2)
+	// 	}
+	// 	var sub *Subscriber
+	// 	sub = &Subscriber{IMSI:imsi, MSISDN:msisdn, IMEISV:imeisv, SrcIP: "192.168."+srcip2+"."+srcip, TrafficType:TrafficType, EUuIFName:EUuIFName, HTTPURL:HTTPURL}
+	// 	enb.candidateSubs= append(enb.candidateSubs, sub)
+	// 	SRCIP++
+	// }
 	// spew.Dump(enb.candidateSubs)
 	
 
