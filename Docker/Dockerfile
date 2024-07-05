@@ -17,11 +17,10 @@ RUN groupadd -g 1000 open5gs \
  
 WORKDIR /go-gtp
 RUN go mod tidy
-USER 1000
 RUN go build -o ./examples/gw-tester/mme/mme ./examples/gw-tester/mme
 RUN go build -o ./examples/gw-tester/enb/enb ./examples/gw-tester/enb
 
-
+USER 1000
 WORKDIR /go-gtp
 COPY --chown=open5gs:open5gs init.sh /go-gtp/init.sh
 COPY --chown=open5gs:open5gs enb.yml /mnt/enb.yml
