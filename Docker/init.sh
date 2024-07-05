@@ -29,6 +29,8 @@
 cp /mnt/enb.yml examples/gw-tester/enb/enb.yml
 cp /mnt/mme.yml examples/gw-tester/mme/mme.yml
 
+chmod 777 examples/gw-tester/enb/enb.yml
+chmod 777 examples/gw-tester/mme/mme.yml
 
 ETH0_IP=$(ip addr show dev eth0 | grep -oP 'inet \K[\d.]+')
 
