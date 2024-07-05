@@ -14,10 +14,10 @@ RUN groupadd -g 1000 open5gs \
     && useradd -r -g open5gs -u 1000 -s /bin/sh open5gs \
     && mkdir /open5gs && chown open5gs:open5gs /open5gs
 
-USER 1000 
-
+ 
 WORKDIR /go-gtp
 RUN go mod tidy
+USER 1000
 RUN go build -o ./examples/gw-tester/mme/mme ./examples/gw-tester/mme
 RUN go build -o ./examples/gw-tester/enb/enb ./examples/gw-tester/enb
 
