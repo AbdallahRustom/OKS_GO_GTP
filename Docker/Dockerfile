@@ -29,8 +29,8 @@ COPY --chown=open5gs:open5gs --from=builder /go-gtp /go-gtp
 COPY --chown=open5gs:open5gs init.sh /go-gtp/init.sh
 COPY --chown=open5gs:open5gs enb.yml examples/gw-tester/enb/enb.yml
 COPY --chown=open5gs:open5gs mme.yml examples/gw-tester/mme/mme.yml
-RUN chmod 777 /go-gtp/examples/gw-tester/enb/enb.yml
-RUN chmod 777 /go-gtp/examples/gw-tester/mme/mme.yml
+# RUN chmod 777 /go-gtp/examples/gw-tester/enb/enb.yml
+# RUN chmod 777 /go-gtp/examples/gw-tester/mme/mme.yml
 
 # COPY --chown=open5gs:open5gs /mnt/enb.yml examples/gw-tester/enb/enb.yml
 # COPY --chown=open5gs:open5gs /mnt/mme.yml examples/gw-tester/mme/mme.yml
