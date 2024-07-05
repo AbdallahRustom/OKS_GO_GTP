@@ -25,7 +25,7 @@ WORKDIR /go-gtp
 COPY --chown=open5gs:open5gs init.sh /go-gtp/init.sh
 COPY --chown=open5gs:open5gs enb.yml examples/gw-tester/enb/enb.yml
 COPY --chown=open5gs:open5gs mme.yml examples/gw-tester/mme/mme.yml
-RUN chmod 777 /mnt/mme.yml
-RUN chmod 777 /mnt/enb.yml
+RUN chmod 777 examples/gw-tester/mme/mme.yml
+RUN chmod 777 examples/gw-tester/enb/enb.yml
 
 CMD /go-gtp/init.sh
