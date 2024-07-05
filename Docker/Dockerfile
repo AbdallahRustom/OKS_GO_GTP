@@ -23,8 +23,9 @@ RUN go build -o ./examples/gw-tester/enb/enb ./examples/gw-tester/enb
 USER 1000
 WORKDIR /go-gtp
 COPY --chown=open5gs:open5gs init.sh /go-gtp/init.sh
-COPY --chown=open5gs:open5gs enb.yml /mnt/enb.yml
-COPY --chown=open5gs:open5gs mme.yml /mnt/mme.yml
+COPY --chown=open5gs:open5gs enb.yml examples/gw-tester/enb/enb.yml
+COPY --chown=open5gs:open5gs mme.yml examples/gw-tester/mme/mme.yml
 RUN chmod 777 /mnt/mme.yml
 RUN chmod 777 /mnt/enb.yml
+
 CMD /go-gtp/init.sh
