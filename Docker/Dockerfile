@@ -19,8 +19,8 @@ FROM golang:1.20.4-buster
 RUN apt-get update && apt-get install -y wget git net-tools tcpdump iperf
 
 RUN groupadd -g 1000 gogtp \
-    && useradd -r -g gogtp -u 1000 -s /bin/sh go-gtp \
-    && mkdir /go=gtp && chown gogtp:gogtp /go-gtp
+    && useradd -r -g gogtp -u 1000 -s /bin/sh gogtp \
+    && mkdir /go-gtp && chown gogtp:gogtp /go-gtp
 
 USER 1000
 
