@@ -27,19 +27,10 @@ RUN apt-get update && apt-get install -y wget git net-tools tcpdump iperf
 WORKDIR /go-gtp
 
 COPY --from=builder /go-gtp /go-gtp
-RUN chmod 777 /go-gtp
-RUN chmod 777 /go-gtp/examples/gw-tester/mme/
-RUN chmod 777 /go-gtp/examples/gw-tester/mme/*
-RUN chmod 777 /go-gtp/examples/gw-tester/enb/
-RUN chmod 777 /go-gtp/examples/gw-tester/enb/*
 COPY  init.sh /go-gtp/init.sh
 COPY  enb.yml examples/gw-tester/enb/enb.yml
 COPY  mme.yml examples/gw-tester/mme/mme.yml
-# RUN chmod 777 /go-gtp/examples/gw-tester/enb/enb.yml
-# RUN chmod 777 /go-gtp/examples/gw-tester/mme/mme.yml
-
-# COPY --chown=open5gs:open5gs /mnt/enb.yml examples/gw-tester/enb/enb.yml
-# COPY --chown=open5gs:open5gs /mnt/mme.yml examples/gw-tester/mme/mme.yml
-
-
+RUN chmod 777 /go-gtp/examples/gw-tester/enb/enb.yml
+RUN chmod 777 /go-gtp/examples/gw-tester/mme/mme.yml
+RUN chmod 777 /go-gtp/init.sh
 CMD /go-gtp/init.sh
