@@ -1,7 +1,7 @@
 version: '3'
 services:
   gogtpdocker:
-    image: go-gtp-stest5000ued1
+    image: abdallahrustom/docker_go_gtp_sdn_test6
     container_name: go-gtp-docker
     entrypoint: sleep 100000
     privileged: true

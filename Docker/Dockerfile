@@ -18,18 +18,18 @@ FROM golang:1.20.4-buster
 
 RUN apt-get update && apt-get install -y wget git net-tools tcpdump iperf
 
-RUN groupadd -g 1000 gogtp \
-    && useradd -r -g gogtp -u 1000 -s /bin/sh gogtp \
-    && mkdir /go-gtp && chown gogtp:gogtp /go-gtp
+# RUN groupadd -g 1000 gogtp \
+#     && useradd -r -g gogtp -u 1000 -s /bin/sh gogtp \
+#     && mkdir /go-gtp && chown gogtp:gogtp /go-gtp
 
-USER 1000
+# USER 1000
 
 WORKDIR /go-gtp
 
-COPY --chown=gogtp:gogtp --from=builder /go-gtp /go-gtp
-COPY --chown=gogtp:gogtp init.sh /go-gtp/init.sh
-COPY --chown=gogtp:gogtp enb.yml examples/gw-tester/enb/enb.yml
-COPY --chown=gogtp:gogtp mme.yml examples/gw-tester/mme/mme.yml
+COPY --from=builder /go-gtp /go-gtp
+COPY  init.sh /go-gtp/init.sh
+COPY  enb.yml examples/gw-tester/enb/enb.yml
+COPY  mme.yml examples/gw-tester/mme/mme.yml
 # RUN chmod 777 /go-gtp/examples/gw-tester/enb/enb.yml
 # RUN chmod 777 /go-gtp/examples/gw-tester/mme/mme.yml
 
