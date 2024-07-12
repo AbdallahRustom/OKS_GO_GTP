@@ -29,6 +29,9 @@
 
 ETH0_IP=$(ip addr show dev eth0 | grep -oP 'inet \K[\d.]+')
 
+cp /mnt/mme.yml /go-gtp/examples/gw-tester/mme/mme.yml
+cp /mnt/enb.yml /go-gtp/examples/gw-tester/enb/enb.yml
+
 sed -i 's|MCC|'$MCC'|g' examples/gw-tester/enb/enb.yml
 sed -i 's|MNC|'$MNC'|g' examples/gw-tester/enb/enb.yml
 sed -i 's|ETH0_IP|'$ETH0_IP'|g' examples/gw-tester/enb/enb.yml
